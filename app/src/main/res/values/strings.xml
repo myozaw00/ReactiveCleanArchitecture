@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Movie DB</string>
+    <string name="now_showing">Now Showing in theatres</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="popular">Trending Now</string>
+    <string name="upcoming_movie">Upcoming in theatres</string>
+    <string name="see_all">See All</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="try_again">Try Again</string>
+</resources>

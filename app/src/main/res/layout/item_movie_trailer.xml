@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@color/colorPrimary">
+
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:id="@+id/lyPoster">
+        <ImageView
+                android:id="@+id/ivPoster"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" android:scaleType="fitXY"
+                tools:src="@drawable/sss"/>
+
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:src="@drawable/youtube"
+                   android:layout_centerHorizontal="true"
+                   android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/tvDate"
+              android:layout_below="@+id/lyPoster"
+              android:textColor="@color/colorSoftGrey"
+              tools:text="12 Feb 2019"
+              android:layout_marginStart="@dimen/margin_small"
+              android:layout_marginTop="@dimen/margin_small"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              tools:text="Title"
+              android:id="@+id/tvTitle"
+              android:textColor="@android:color/white"
+              android:layout_below="@+id/tvDate"
+              android:layout_marginStart="@dimen/margin_small"
+              android:layout_marginTop="@dimen/margin_small"
+              android:textStyle="bold"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:padding="@dimen/margin_small"
+              android:id="@+id/tvOverview"
+              tools:text="This is overview."
+              android:textColor="@color/colorSoftGrey"
+              android:layout_below="@+id/tvTitle"
+              android:layout_marginBottom="@dimen/margin_small"/>
+
+
+</RelativeLayout>

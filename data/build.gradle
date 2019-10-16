@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            buildConfigField "String", "MOVIE_DB_KEY", "\"db85bc6bf1d96e2f47ac91af80e1d717\""
+            buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/\""
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        staging {
+            minifyEnabled false
+            debuggable true
+            buildConfigField "String", "MOVIE_DB_KEY", "\"db85bc6bf1d96e2f47ac91af80e1d717\""
+            buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/\""
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            debuggable false
+            buildConfigField "String", "MOVIE_DB_KEY", "\"db85bc6bf1d96e2f47ac91af80e1d717\""
+            buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/\""
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project (':domain')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Rx Kotlin
+    implementation "io.reactivex.rxjava2:rxkotlin:${versions.rxKotlin}"
+    //Room (Database)
+    implementation "androidx.room:room-rxjava2:${versions.room}"
+    implementation "androidx.room:room-runtime:${versions.room}"
+    kapt "androidx.room:room-compiler:${versions.room}"
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
+    implementation "com.jakewharton.timber:timber:${versions.timber}"
+
+    //Gson
+    implementation "com.google.code.gson:gson:${versions.gson}"
+}
